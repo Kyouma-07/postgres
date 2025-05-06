@@ -92,3 +92,52 @@ SELECT CHAR_LENGTH('Hello, World!') AS length_of_string;
 --Used to get the length of a string in bytes.
 --SELECT LENGTH(STR) AS length_of_string;
 SELECT LENGTH('Hello, World!') AS length_of_string; 
+
+
+--UPPER FUNCTION-- CONVERT TO UPPERCASE
+--Used to convert a string to uppercase.    
+--SELECT UPPER(STR) AS uppercase_string;
+SELECT UPPER('Hello, World!') AS uppercase_string;
+
+
+--LOWER FUNCTION-- CONVERT TO LOWERCASE
+--Used to convert a string to lowercase.    
+--SELECT LOWER(STR) AS lowercase_string;
+SELECT LOWER('Hello, World!') AS lowercase_string;
+
+
+--POSTGRES DOES NOT SUPPORT THE INSERT FUNCTION. WILL WORK ON MYSQL
+--OVERLAY FUNCTION-- INSERTING SUBSTRINGS
+--Used to replace a substring at a specified position within a string.
+--OVERLAY ("GIVEN STRING" PLACING "SUBSTRING TO INSERT" FROM "POSITION TO INSERT")
+--OVERLAY IS CASE SENSITIVE.
+SELECT OVERLAY('Hello, World!' PLACING 'Postgres' FROM 8) AS inserted_string;
+ -- Result: 'Hello, PostgresWorld!'
+
+
+ --LEFT FUNCTION-- EXTRACTING LEFT PART OF A STRING
+--Used to extract a specified number of characters from the left side of a string.
+--SELECT LEFT(STR, N) AS left_part_of_string;
+SELECT LEFT('Hello, World!', 5) AS left_part_of_string;
+
+
+--RIGHT FUNCTION-- EXTRACTING RIGHT PART OF A STRING
+--Used to extract a specified number of characters from the right side of a string. 
+--SELECT RIGHT(STR, N) AS right_part_of_string;
+SELECT RIGHT('Hello, World!', 6) AS right_part_of_string; 
+
+--REPEAT FUNCTION-- REPEATING A STRING
+--Used to repeat a string a specified number of times.          
+--SELECT REPEAT(STR, N) AS repeated_string;
+SELECT REPEAT('Hello', 3) AS repeated_string;
+
+
+--TRIM FUNCTION-- REMOVING WHITESPACE
+--Used to remove leading and trailing whitespace from a string.
+--SELECT TRIM(STR) AS trimmed_string;
+--CAN ALSO BE USED TO REMOVE SPECIFIC CHARACTERS FROM A STRING.
+--SELECT TRIM(LEADING/TRAILING/BOTH FROM STR) AS trimmed_string;
+SELECT TRIM('   Hello, World!   ') AS trimmed_string;
+SELECT TRIM(LEADING 'H' FROM 'Hello, World!') AS trimmed_string; 
+SELECT TRIM(TRAILING '!' FROM 'Hello, World!') AS trimmed_string; 
+SELECT TRIM(BOTH 'H' FROM 'Hello, World!') AS trimmed_string;
